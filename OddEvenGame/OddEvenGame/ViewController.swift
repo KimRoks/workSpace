@@ -8,12 +8,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet var computerBallCountLabel: UILabel!
+    
+    @IBOutlet var userBallCountLabel: UILabel!
+    
+    var comBallsCount: Int = 20
+    var userBallsCount: Int = 20
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        computerBallCountLabel.text = String(comBallsCount)
+        userBallCountLabel.text = String(userBallsCount)
+    
+        
     }
-
-
+    
+    @IBAction func gameStartPressed(_ sender: Any) {
+        print("게임시작")
+    }
+    
+    
+    
+    
+    
 }
+
 
