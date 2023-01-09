@@ -1,45 +1,64 @@
-import UIKit
+//저장 프로퍼티 :
+//    단순한 값을 저장하고 있는 프로퍼티
+//    변수나 또는 상수 키워드를 이용해서 사용가능
+//struct Student {
+//    var name: String
+//    var age: Int
+//}
+//struct Student {
+//    var name: String
+//    var age: Int
+//}
+//var roks = Student(name: "김경록", age: 25)
+//print(roks)
 
 
-var isChecked = false
-if isChecked {
-    print("체크되어있음")
-}else {
-    print("체크 ㄴㄴ")
-}
-
-var time = 10
-
-if time == 9 {
-    print("아침식사")
-} else if time == 12 {
-    print("점심")
-} else if time == 18 {
-    print("저녁")
-} else {
-    print("자유시간")
-}
-
-
-let myColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-let red = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-let blue = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
-switch myColor {
-case #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) :
-    print("회색")
-case blue :
-    print("파란색")
-case red :
-    print("빨간색")
-default : print("측정할 수 없는 색상")
-}
-
-
-func getName(name: String?) -> String {
-    guard let myName = name else {
-        return "이름값이 존재하지않습니다"
+//연산 프로퍼티 :
+//    실제값을 저장하고 있는 것이 아니라 get/set 으로 값을 탐색하고
+//    간접적으로 다른 프로퍼티의 값을 설정할 수 있음
+struct WeeklySalary {
+    var hourlyWage: Double
+    var workingHours: Double
+    var wage: Double {
+        get {
+            return hourlyWage * workingHours
+        }
+        set{
+            workingHours = newValue / hourlyWage
+        }
     }
-    return myName
 }
-getName(name: "김경록")
-getName(name: nil)
+
+var myWeeklySalary = WeeklySalary(hourlyWage: 10000, workingHours: 4)
+print(myWeeklySalary)
+print(myWeeklySalary.wage)
+myWeeklySalary.wage = 50000
+print(myWeeklySalary.workingHours)
+
+//프로퍼티 옵저버 :
+//    프로퍼티의 새 값이 설정 될 때 마다 이벤트를 감지할 수 있다
+//    willset/ didset
+    
+
+struct Student {
+    var name: String {
+        willSet {
+            print("\(name) -> \(newValue)로 변경 예정입니다")
+        }
+        didSet{
+            print("\(oldValue) -> \(name)로 변경되었습니다.")
+        }
+    }
+}
+
+var kimRoks = Student(name: "김경록")
+kimRoks.name
+
+struct SomeStruct {
+    static var storedTypeProperty = "Some Value"
+    static var computedTypeProperty: Int {
+        return 1
+    }
+}
+SomeStruct.storedTypeProperty
+SomeStruct.computedTypeProperty
