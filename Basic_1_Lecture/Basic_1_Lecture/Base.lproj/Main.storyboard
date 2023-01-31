@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Basic_1_Lecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeatherBG_Sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGw-lW-4ym">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bd8-Gc-uhm">
+                                <rect key="frame" x="146.66666666666666" y="248.33333333333337" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="SzT-8M-ewr"/>
+                                    <constraint firstAttribute="width" constant="100" id="fvu-9k-M2G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bfS-xY-EV1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bGw-lW-4ym" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7QI-r8-QvE"/>
+                            <constraint firstItem="bGw-lW-4ym" firstAttribute="leading" secondItem="bfS-xY-EV1" secondAttribute="leading" id="WMi-jU-FZL"/>
+                            <constraint firstItem="bfS-xY-EV1" firstAttribute="trailing" secondItem="bGw-lW-4ym" secondAttribute="trailing" id="aTW-kN-JcQ"/>
+                            <constraint firstItem="Bd8-Gc-uhm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="io7-ps-DjI"/>
+                            <constraint firstItem="Bd8-Gc-uhm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.7" id="pML-iK-3Jv"/>
+                            <constraint firstAttribute="bottom" secondItem="bGw-lW-4ym" secondAttribute="bottom" id="x2L-XL-kc7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="-34.151785714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="WeatherBG_Sun.png" width="180" height="320.16000366210938"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
